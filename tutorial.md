@@ -11,7 +11,7 @@ Dataloggeren er installeret i denne tutorial. Hvis du skal installere i dit eget
 * På den næste side, finder du muligheden "datalogger"
 
 ## Knapperne
-Du skal bruge tre knapper i programmet. `|input.knap A|`, `|input.knap B|` og `|input.knap A+B|` (A og B trykket ind samtidigt) 
+Du skal bruge tre knapper i programmet. `||input:når der trykkes på knap A||`, `||input:når der trykkes på knap B||` og `||input:når der trykkes på knap A+B||` (A og B trykket ind samtidigt) 
 
 ## Variabel 
 Du skal nu oprette en variabel. Du kan kalde den `||variables:datalogning||`. Den fortæller programmet, om datalogning er tændt eller slukket. 
