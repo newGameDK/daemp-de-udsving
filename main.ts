@@ -1,38 +1,22 @@
-let datalogningSand = 0
+let datalogningStatus = 0
 input.onButtonPressed(Button.A, function () {
-    datalogningSand = 1
+    datalogningStatus = 1
     basic.showLeds(`
-        # # # # #
-        # # # # #
-        # # # # #
-        # # # # #
-        # # # # #
+        . . . . .
+        . . # . .
+        . . # . .
+        . . # . .
+        . . . . .
         `)
 })
 input.onButtonPressed(Button.AB, function () {
     datalogger.deleteLog()
     basic.pause(100)
     basic.showLeds(`
-        # . . . #
-        . # . # .
-        . . # . .
-        . # . # .
-        # . . # #
-        `)
-    basic.pause(100)
-    basic.showLeds(`
         . . . . .
         . # . # .
         . . # . .
         . # . # .
-        . . . . .
-        `)
-    basic.pause(100)
-    basic.showLeds(`
-        . . . . .
-        . . . . .
-        . . # . .
-        . . . . .
         . . . . .
         `)
     basic.pause(100)
@@ -45,38 +29,14 @@ input.onButtonPressed(Button.AB, function () {
         `)
 })
 input.onButtonPressed(Button.B, function () {
-    if (datalogningSand) {
-        datalogningSand = 0
+    if (datalogningStatus) {
+        datalogningStatus = 0
         basic.showLeds(`
             . . . . .
-            # # # # #
-            # # # # #
-            # # # # #
-            # # # # #
-            `)
-        basic.pause(100)
-        basic.showLeds(`
+            . # # # .
+            . # . # .
+            . # # # .
             . . . . .
-            . . . . .
-            # # # # #
-            # # # # #
-            # # # # #
-            `)
-        basic.pause(100)
-        basic.showLeds(`
-            . . . . .
-            . . . . .
-            . . . . .
-            # # # # #
-            # # # # #
-            `)
-        basic.pause(100)
-        basic.showLeds(`
-            . . . . .
-            . . . . .
-            . . . . .
-            . . . . .
-            # # # # #
             `)
         basic.pause(100)
         basic.showLeds(`
@@ -89,10 +49,10 @@ input.onButtonPressed(Button.B, function () {
     }
 })
 basic.forever(function () {
-    if (datalogningSand) {
+    if (datalogningStatus == 1) {
         datalogger.log(
         datalogger.createCV("Tid", input.runningTime() % 1000),
-        datalogger.createCV("Acceleration", input.acceleration(Dimension.X))
+        datalogger.createCV("Acceleration", input.acceleration(Dimension.Strength))
         )
         basic.pause(100)
     }

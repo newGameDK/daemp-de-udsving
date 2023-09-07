@@ -1,61 +1,31 @@
-<xml xmlns="https://developers.google.com/blockly/xml"><variables><variable id="4#R|/eEhSe_*f?NnEd3w">datalogningSand</variable></variables><block type="device_button_event" id="JpDox2_8#S[ia%x9.j{o" x="-734" y="-2"><field name="NAME">Button.A</field><statement name="HANDLER"><block type="variables_set" id="LK0wmh:?wB+=!UEy!QwL"><field name="VAR" id="4#R|/eEhSe_*f?NnEd3w">datalogningSand</field><value name="VALUE"><shadow type="math_number" id="HV^(WH#GE|0^~6?z4rlY"><field name="NUM">1</field></shadow></value><next><block type="device_show_leds" id="k}{YONv6`pD2)#;N@z}9"><field name="LEDS">`
-        # # # # # 
-        # # # # # 
-        # # # # # 
-        # # # # # 
-        # # # # #
-        `</field></block></next></block></statement></block><block type="device_button_event" id="g#x~_W*tJ6jl`2r$~TD." x="-382" y="-1"><field name="NAME">Button.B</field><statement name="HANDLER"><block type="controls_if" id=".o%3(DNtBuY#kp)bQBS)"><value name="IF0"><shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow><block type="variables_get" id="rHa=*v)UMc_L,Yvm,hV6"><field name="VAR" id="4#R|/eEhSe_*f?NnEd3w">datalogningSand</field></block></value><statement name="DO0"><block type="variables_set" id="7Rb}#T!+L6MXiy`1#=3#"><field name="VAR" id="4#R|/eEhSe_*f?NnEd3w">datalogningSand</field><value name="VALUE"><shadow type="math_number" id="A:99vBh%Y)@dXP`BH;_p"><field name="NUM">0</field></shadow></value><next><block type="device_show_leds" id="8sd3/!KAAb*W]P4;J:Dc"><field name="LEDS">`
+<xml xmlns="https://developers.google.com/blockly/xml"><variables><variable id="4HAqra@G$K?r;~CdTA;o">datalogningStatus</variable></variables><block type="device_button_event" id="9@Px)o_P0%t-urff=1ZN" x="0" y="0"><field name="NAME">Button.B</field><statement name="HANDLER"><block type="controls_if" id="}nCBx2:{@deIbPUW0.NM"><value name="IF0"><shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow><block type="variables_get" id="ORM,.FN}]]PL4U#8do){"><field name="VAR" id="4HAqra@G$K?r;~CdTA;o">datalogningStatus</field></block></value><statement name="DO0"><block type="variables_set" id="$Cgu!KSHO:4u8-3E!3.V"><field name="VAR" id="4HAqra@G$K?r;~CdTA;o">datalogningStatus</field><value name="VALUE"><shadow type="math_number" id="|M%)Btayb}ElB3=s*c_6"><field name="NUM">0</field></shadow></value><next><block type="device_show_leds" id="AUWm_PV/)3e7aGm9E`i?"><field name="LEDS">`
         . . . . . 
-        # # # # # 
-        # # # # # 
-        # # # # # 
-        # # # # #
-        `</field><next><block type="device_pause" id="eX^OKu0^+.u}cCR2KBH-"><value name="pause"><shadow type="timePicker" id="5;K~k#{}SE4aQNGod#be"><field name="ms">100</field></shadow></value><next><block type="device_show_leds" id="i0,4nq~RM/{(hN]?IYiy"><field name="LEDS">`
-        . . . . . 
-        . . . . . 
-        # # # # # 
-        # # # # # 
-        # # # # #
-        `</field><next><block type="device_pause" id="HdnK{vuOCS4L[JRpSFC:"><value name="pause"><shadow type="timePicker" id="`y|;Y~9-u!C@StJat{r5"><field name="ms">100</field></shadow></value><next><block type="device_show_leds" id="@LvYL~gp)Zm^pkXi(UD]"><field name="LEDS">`
-        . . . . . 
-        . . . . . 
-        . . . . . 
-        # # # # # 
-        # # # # #
-        `</field><next><block type="device_pause" id="o/3BU)zFW3,vg165h:P,"><value name="pause"><shadow type="timePicker" id="F9S-sd,|+|,91]!`1MjK"><field name="ms">100</field></shadow></value><next><block type="device_show_leds" id="j^-BaVsVOA,O/(UeUf.`"><field name="LEDS">`
-        . . . . . 
-        . . . . . 
-        . . . . . 
-        . . . . . 
-        # # # # #
-        `</field><next><block type="device_pause" id="itu`DPA*/ggYPgFv@zJF"><value name="pause"><shadow type="timePicker" id="!xZu@PZj:VHuBydi9BiF"><field name="ms">100</field></shadow></value><next><block type="device_show_leds" id="`XfUE$2QX18]0S+vK7s("><field name="LEDS">`
+        . # # # . 
+        . # . # . 
+        . # # # . 
+        . . . . .
+        `</field><next><block type="device_pause" id="BLnE{=|)KNxOFTbN|VUq"><value name="pause"><shadow type="timePicker" id="2F:m(z=FI:qBfA_Hc1fY"><field name="ms">100</field></shadow></value><next><block type="device_show_leds" id="KDgblIen)zcYY`%1,59A"><field name="LEDS">`
         . . . . . 
         . . . . . 
         . . . . . 
         . . . . . 
         . . . . .
-        `</field></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></statement></block></statement></block><block type="device_forever" id="2I.c!OD_3PFt@TL312t9" x="0" y="0"><statement name="HANDLER"><block type="controls_if" id="I^4`^,7a.^urF0)}~^;8"><value name="IF0"><shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow><block type="variables_get" id="mRiylu8LN[`0WwpT_|Iw"><field name="VAR" id="4#R|/eEhSe_*f?NnEd3w">datalogningSand</field></block></value><statement name="DO0"><block type="dataloggerlog" id="tkr,gtofcf2kiN73GLap"><mutation xmlns="http://www.w3.org/1999/xhtml" _expanded="1" _input_init="true"></mutation><value name="data1"><shadow type="dataloggercreatecolumnvalue" id="6NufYZV_F|Aih9^G^I6]"><value name="column"><shadow type="datalogger_columnfield" id="J.|.3?46QJ69S3-`}rLq"><field name="column">"Tid"</field></shadow></value><value name="value"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="math_modulo" id="[4/P0(1GH:1~F+@S!]$X"><value name="DIVIDEND"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="device_get_running_time" id=")Is![|nW]_qYI/98Yi$g"></block></value><value name="DIVISOR"><shadow type="math_number" id="qxk?]NC+ge(HlhFXq:^1"><field name="NUM">1000</field></shadow></value></block></value></shadow></value><value name="data2"><shadow type="dataloggercreatecolumnvalue" id="BTIuZQg(bDz_|EW7=JD)"><value name="column"><shadow type="datalogger_columnfield" id="NJ.ZP~FIt_J^r4+zjyY0"><field name="column">"Acceleration"</field></shadow></value><value name="value"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="device_acceleration" id="39hYUudZE!QO$Q,+`h+J"><field name="NAME">Dimension.X</field></block></value></shadow></value><next><block type="device_pause" id="Yd1M~@u3kU0FV4M0H@2w"><value name="pause"><shadow type="timePicker" id="N7#9LE6lTun)rKa}BP}I"><field name="ms">100</field></shadow></value></block></next></block></statement></block></statement></block><block type="device_button_event" id="*[oixKZ,YNFq[{[[naSa" x="-18" y="459"><field name="NAME">Button.AB</field><statement name="HANDLER"><block type="dataloggerdeletelog" id="]T8T0,3TcbpVvq^p@VE#"><mutation xmlns="http://www.w3.org/1999/xhtml" _expanded="0" _input_init="true"></mutation><field name="deleteType">datalogger.DeleteType.Fast</field><next><block type="device_pause" id="7Cd;G]3R}0a)UhGNH2AC"><value name="pause"><shadow type="timePicker" id="2g|PCx=Lr~yXABf=kEcg"><field name="ms">100</field></shadow></value><next><block type="device_show_leds" id="=yOV[`ki0N$_3,C8J7xB"><field name="LEDS">`
-        # . . . # 
-        . # . # . 
+        `</field></block></next></block></next></block></next></block></statement></block></statement></block><block type="device_button_event" id="?$D)I{pkQQj;Rde8qD=-" x="401" y="0"><field name="NAME">Button.A</field><statement name="HANDLER"><block type="variables_set" id="PZze1jeqTu8}PU{d3-45"><field name="VAR" id="4HAqra@G$K?r;~CdTA;o">datalogningStatus</field><value name="VALUE"><shadow type="math_number" id=".8[;y/Ni3CSCGI?{yxG8"><field name="NUM">1</field></shadow></value><next><block type="device_show_leds" id="Nu65nqc5xJJ8uQQHe]Jg"><field name="LEDS">`
+        . . . . . 
         . . # . . 
-        . # . # . 
-        # . . # #
-        `</field><next><block type="device_pause" id="L]uX/grfRWdWDJz?tw{D"><value name="pause"><shadow type="timePicker" id="!9Q%1s.GU?WFRIaP^*|`"><field name="ms">100</field></shadow></value><next><block type="device_show_leds" id="!j*Xo;!0Sh/@m_*-jO+,"><field name="LEDS">`
+        . . # . . 
+        . . # . . 
+        . . . . .
+        `</field></block></next></block></statement></block><block type="device_button_event" id="y|foAIU%jBs9rM3MIEpc" x="786" y="0"><field name="NAME">Button.AB</field><statement name="HANDLER"><block type="dataloggerdeletelog" id="T.1:BSj6f!Ws^v{BS0l`"><mutation xmlns="http://www.w3.org/1999/xhtml" _expanded="0" _input_init="true"></mutation><field name="deleteType">datalogger.DeleteType.Fast</field><next><block type="device_pause" id="fI[sGjtl4lAe;h5^2FR`"><value name="pause"><shadow type="timePicker" id="Z}*H,w14XHY+2$BMP4bk"><field name="ms">100</field></shadow></value><next><block type="device_show_leds" id="!;ZA6FDVp}:CsPB`7H0n"><field name="LEDS">`
         . . . . . 
         . # . # . 
         . . # . . 
         . # . # . 
         . . . . .
-        `</field><next><block type="device_pause" id="t$$y!CyWf/TX{sMHAA.:"><value name="pause"><shadow type="timePicker" id="PT0$F!),$F(!BAp6Oy{["><field name="ms">100</field></shadow></value><next><block type="device_show_leds" id="_^.I;L{IbE0NaC`li%/1"><field name="LEDS">`
-        . . . . . 
-        . . . . . 
-        . . # . . 
-        . . . . . 
-        . . . . .
-        `</field><next><block type="device_pause" id="*0H/u|^Vo,T-+`VS96}O"><value name="pause"><shadow type="timePicker" id="^j!xd|r~|@7ca7C*XI#S"><field name="ms">100</field></shadow></value><next><block type="device_show_leds" id="cQo.sU`qhu9Kb7m/lBDD"><field name="LEDS">`
+        `</field><next><block type="device_pause" id="vu62lcYI|rZ^r)^|IJBm"><value name="pause"><shadow type="timePicker" id="1?Y$r@qVff?rXFZezvop"><field name="ms">100</field></shadow></value><next><block type="device_show_leds" id="kvwyu!]Vd.,o8FoVjx93"><field name="LEDS">`
         . . . . . 
         . . . . . 
         . . . . . 
         . . . . . 
         . . . . .
-        `</field></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></statement></block></xml>
+        `</field></block></next></block></next></block></next></block></next></block></statement></block><block type="device_forever" id="#2Cu`K8yBx:O4v#mV4X{" x="1146" y="0"><statement name="HANDLER"><block type="controls_if" id="Qx[zx:[Wbl=p6jg^YJiP"><value name="IF0"><shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow><block type="logic_compare" id="Hvw}]ggFM)OuwG_SVPX@"><field name="OP">EQ</field><value name="A"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="variables_get" id="9?w^R,#qyEVrRqb#Hu}:"><field name="VAR" id="4HAqra@G$K?r;~CdTA;o">datalogningStatus</field></block></value><value name="B"><shadow type="math_number" id="6E%=}_xSAs)op/1R=d%]"><field name="NUM">1</field></shadow></value></block></value><statement name="DO0"><block type="dataloggerlog" id="P0Mz!!NKO3!j{56Hom/C"><mutation xmlns="http://www.w3.org/1999/xhtml" _expanded="1" _input_init="true"></mutation><value name="data1"><shadow type="dataloggercreatecolumnvalue" id="1`:SYx{VXh4kV$9/r:?!"><value name="column"><shadow type="datalogger_columnfield" id="V`mNGPVEk+YVt*Espj?t"><field name="column">"Tid"</field></shadow></value><value name="value"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="math_modulo" id="@a5EzmpEDJkT2#k8V/Rz"><value name="DIVIDEND"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="device_get_running_time" id="4Lk]fHPm`UfKmhxMi1yL"></block></value><value name="DIVISOR"><shadow type="math_number" id="#Y6f]BZ6lkt9Y^kdX5pb"><field name="NUM">1000</field></shadow></value></block></value></shadow></value><value name="data2"><shadow type="dataloggercreatecolumnvalue" id="u[QdV60)T`wOWt]cg-oF"><value name="column"><shadow type="datalogger_columnfield" id="%e_,Gn5S~!n76t2Nimfr"><field name="column">"Acceleration"</field></shadow></value><value name="value"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="device_acceleration" id="Hoqc_L%=[$Qb*w:]IOA^"><field name="NAME">Dimension.Strength</field></block></value></shadow></value><next><block type="device_pause" id="}+|BU18Mp@x/gakta@yj"><value name="pause"><shadow type="timePicker" id="pv)H:6FNttro{*`{,JdP"><field name="ms">100</field></shadow></value></block></next></block></statement></block></statement></block></xml>
