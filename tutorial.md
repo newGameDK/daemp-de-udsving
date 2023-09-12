@@ -54,6 +54,44 @@ Knap B skal slukke for datalogningen.
 * Sæt værdien til 0
 * Som du måske har gættet betyder 1 at datalogning er tændt, og 0 at datalogning er slukket.
 
+```blocks
+input.onButtonPressed(Button.B, function () {
+    if (datalogningStatus) {
+        datalogningStatus = 0
+    }
+})
+```
+
+## Knap B - vis på skærmen at du har slukket
+* Træk blokken `||basic.vis LED'er||` ind i blokken `|input.knap B|`
+* Lav et tegn for slukke
+* Træk blokken `||basic.pause||` ind i blokken `|input.knap B|`
+* Træk blokken `||basic.vis LED'er||` ind i blokken `|input.knap B|`
+* Lad blokken være blank. På den måde viser den i kort tid tegnet for sluk, og slukker herefter skærmen.
+
+```blocks
+input.onButtonPressed(Button.B, function () {
+    if (datalogningStatus) {
+        datalogningStatus = 0
+        basic.showLeds(`
+            . . . . .
+            . # # # .
+            . # . # .
+            . # # # .
+            . . . . .
+            `)
+        basic.pause(100)
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            . . . . .
+            . . . . .
+            . . . . .
+            `)
+    }
+})
+```
+
 ## For altid
 I blokken for altid, sker datalogningen. Her skal vi sætte op at den først spørger om variablen `||variables:datalogning||` er 1 eller 0. 
 * Start med at trække en `||logic:hvis ... så||` ind i blokken `||basic:for altid||`
@@ -93,6 +131,7 @@ basic.forever(function () {
 
 
 ## Indsæt en pause
+* Træk blokken `||basic.pause||` ind i blokken `|basic.for altid|`
 ```blocks
 basic.forever(function () {
     if (datalogningStatus == 1) {
@@ -105,77 +144,12 @@ basic.forever(function () {
 })
 ```
 
-
-
- 
-
 ## Tillykke!
 Nu er du færdig med din kode. Du kan nu afprøve om du kan: 
-* Let: Tjekke om den tæller rigtigt?
-* Let: Undersøge hvor meget den skal rystes før den tæller
-* Mellem: Hvorfor tror du den ikke tæller helt rigtigt?
-* Mellem: Prøve at sætte flere @boardname@ på den samme person, forskellige steder på kroppen
-* Svær: Bygge en holder til din @boardname@ skridttæller.
-* Svær: Finde på noget andet at bruge programmet til? Fx. hvor mange gange en dør bliver åbnet og lukket?`
-* Svær: Tænk over om der mon er noget sted på rumstationen hvor den virker?
-
-
-let datalogningStatus = 0
-input.onButtonPressed(Button.A, function () {
-    datalogningStatus = 1
-    basic.showLeds(`
-        . . . . .
-        . . # . .
-        . . # . .
-        . . # . .
-        . . . . .
-        `)
-})
-input.onButtonPressed(Button.AB, function () {
-    datalogger.deleteLog()
-    basic.pause(100)
-    basic.showLeds(`
-        . . . . .
-        . # . # .
-        . . # . .
-        . # . # .
-        . . . . .
-        `)
-    basic.pause(100)
-    basic.showLeds(`
-        . . . . .
-        . . . . .
-        . . . . .
-        . . . . .
-        . . . . .
-        `)
-})
-input.onButtonPressed(Button.B, function () {
-    if (datalogningStatus) {
-        datalogningStatus = 0
-        basic.showLeds(`
-            . . . . .
-            . # # # .
-            . # . # .
-            . # # # .
-            . . . . .
-            `)
-        basic.pause(100)
-        basic.showLeds(`
-            . . . . .
-            . . . . .
-            . . . . .
-            . . . . .
-            . . . . .
-            `)
-    }
-})
-basic.forever(function () {
-    if (datalogningStatus == 1) {
-        datalogger.log(
-        datalogger.createCV("Tid", input.runningTime() % 1000),
-        datalogger.createCV("Acceleration", input.acceleration(Dimension.X))
-        )
-        basic.pause(100)
-    }
-})
+* Let: Se om du kan starte en måling, samle måle-data med din microbit, og stoppe målingen igen
+* Let: Se om du kan overføre dataene til computeren
+* Let: Se om du efter overførslen kan slette din måling
+* Mellem: Undersøg hvad der sker med datasættet hvis du laver flere målinger uden at overføre måle-data til din computer.
+* Mellem: Find noget at måle. Hvad kunne du forestille dig? Rystelser i gulvet? Rystelser i en dør? På en cykel?
+* Svær: Find et sted hvor du vurderer rystelser kan være et problem. Undersøg det med din måler.
+* Svær: Prøv at finde en løsning på problemet, og undersøg med din måler om det hjalp?
