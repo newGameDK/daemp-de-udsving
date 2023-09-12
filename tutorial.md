@@ -1,26 +1,25 @@
 ## Svingningsmåleren! 
-Nu skal vi sammen bygge en måler til at registrere svingninger. 
+Nu skal du bygge en måler til at registrere svingninger! 
 
-* **OBS! Du skal bruge en @boardname@ i mindst version 2 (V2) før denne kode virker** 
+* **OBS!** Du skal bruge en @boardname@ i mindst version 2 (V2)
 * Følg med her, så er koden klar om lidt! :-) 
 * Du kan eventuelt se videoen [her](http://example.com "testvideoen") for en gennemgang af denne tutorial.
 
 ## Installer datalogger-udvidelsen
 Hvis du ikke allerede har dataloggeren:
 * Tryk på "Udvidelser +"
-* Find "datalogger" og klik på det.
+* Find "datalogger" og klik på den.
 
-
-## Knapperne
+## Knapper
 Du skal bruge tre knapper i programmet 
 * `||input.når der trykkes på knap A||` (starter målingen)
 * `||input:når der trykkes på knap B||` (stopper målingen)
 * `||input:når der trykkes på knap A+B||` (sletter målingen) 
 
 ## Variabel 
-Opret en variabel og kald den `||variables:datalogning||`. (Den fortæller programmet, om datalogning er tændt eller slukket)
+Opret en variabel og kald den `||variables:datalogning||`. Den fortæller programmet, om datalogning er tændt eller slukket
 
-## Indsæt variablen 
+## Knap A: Tænd datalogning 
 Sæt værdien af `||variables:datalogning||` sådan her: 
 * Træk knappen `||variables:sæt datalogning til||` ind under `||input.når der trykkes på knap A||`
 * Sæt værdien af variablen `||variables:datalogning||` til 1
@@ -32,7 +31,7 @@ input.onButtonPressed(Button.A, function () {
 })
 ```
 
-## Vis at datalogning er startet
+## Knap A: Skærmbillede
 * Træk en `||basic.vis LED'er||` blok ind under `||variables:sæt datalogning til||` 
 * Tegn et symbol for at datalogningen er startet 
 
@@ -49,20 +48,17 @@ input.onButtonPressed(Button.A, function () {
 })
 ```
 
-## Knap B - sluk datalogning
-Knap B slukker datalogningen 
+## Knap B: Sluk datalogning
 * Træk blokken `||variables:sæt datalogning til||` ind i blokken `|input.knap B|`
 * Sæt værdien til 0
 
 ```blocks
 input.onButtonPressed(Button.B, function () {
-    if (datalogningStatus) {
-        datalogningStatus = 0
-    }
+           datalogningStatus = 0
 })
 ```
 
-## Knap B - vis symbol for slukket datalogning
+## Knap B: Skærmbillede
 * Træk en `||basic.vis LED'er||` blok ind under `||variables:sæt datalogning til||` 
 * Tegn et symbol for at datalogningen er slukket 
 * Træk blokken `||basic.pause||` ind under symbolet du har tegnet
@@ -93,7 +89,7 @@ input.onButtonPressed(Button.B, function () {
 ```
 
 ## For altid
-Selve datalogningen sker i `||basic:for altid||`  
+Datalogningen sker i blokken `||basic:for altid||`  
 * Start med at trække en `||logic:hvis ... så||` ind i blokken `||basic:for altid||`
 * Træk `||logic: 0 = 0 ||` ind i blokken `||logic:hvis ... så||` 
 * Træk derefter variablen `||variables:datalogning||` ind i `||logic: 0 = 0 ||` blokken
@@ -107,7 +103,7 @@ basic.forever(function () {
 })
 ```
 
-## Start datalogning
+## For altid: Start datalogning
 Hvis du har trykket på `||input.når der trykkes på knap A||`, bliver `||variables:datalogning||` = 1 og datalogningen skal startes. Vi indstiller datalogningen her.
 * træk `||datalogger:log data||` ind i `||logic:hvis ... så||`
 * Udfyld kolonnetitel med navnet "Tid" 
@@ -130,7 +126,7 @@ basic.forever(function () {
 ```
 
 
-## Indsæt en pause
+## For altid: Indsæt pause
 * Træk blokken `||basic.pause||` ind i blokken `|basic.for altid|`. Den sørger for at der kommer 100 ms pause mellem målepunkterne.
 
 ```blocks
