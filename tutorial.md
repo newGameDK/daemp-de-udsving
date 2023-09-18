@@ -27,7 +27,6 @@ Sæt værdien af `||variables:datalogning||` sådan her:
 ```blocks
 input.onButtonPressed(Button.A, function () {
     datalogning = 1
-    
 })
 ```
 
@@ -120,11 +119,9 @@ basic.forever(function () {
         datalogger.createCV("Tid", input.runningTime() % 1000),
         datalogger.createCV("Acceleration", input.acceleration(Dimension.X))
         )
-   
     }
 })
 ```
-
 
 ## For altid: Indsæt pause
 * Træk blokken `||basic.pause||` ind i blokken `|basic.for altid|`. Den sørger for at der kommer 100 ms pause mellem målepunkterne.
