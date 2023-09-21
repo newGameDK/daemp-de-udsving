@@ -27,7 +27,6 @@ Sæt værdien af `||variables:datalogning||` sådan her:
 ```blocks
 input.onButtonPressed(Button.A, function () {
     datalogning = 1
-    
 })
 ```
 
@@ -88,55 +87,33 @@ input.onButtonPressed(Button.B, function () {
 })
 ```
 
-## For altid
-Datalogningen sker i blokken `||basic:for altid||`  
-* Start med at trække en `||logic:hvis ... så||` ind i blokken `||basic:for altid||`
+## Hver 100 ms
+Datalogningen sker i blokken `||loops:every||`  
+* Start med at trække en `||logic:hvis ... så||` ind i blokken `||loops:every||`
 * Træk `||logic: 0 = 0 ||` ind i blokken `||logic:hvis ... så||` 
 * Træk derefter variablen `||variables:datalogning||` ind i `||logic: 0 = 0 ||` blokken
 * Skift værdien 0 til 1. Nu spørger programmet om `||variables:datalogning||` = 1
 
 ```blocks
-basic.forever(function () {
+loops.everyInterval(100, function () {
     if (datalogningStatus == 1) {
-
     }
 })
 ```
 
-## For altid: Start datalogning
-Hvis du har trykket på `||input.når der trykkes på knap A||`, bliver `||variables:datalogning||` = 1 og datalogningen skal startes. Vi indstiller datalogningen her.
+
+## Hver 100 ms: Start datalogning
+Nu til datalogningen, der kører hvis du har trykket på knap A, så variablen `||variables:datalogning||` = 1
 * træk `||datalogger:log data||` ind i `||logic:hvis ... så||`
-* Udfyld kolonnetitel med navnet "Tid" 
-* Udfyld "value" med `||input.køretid (ms)||`
 * Tryk på + ikonet på `||datalogger:log data||`
 * Udfyld kolonnetitel med navnet "Acceleration" 
-* Udfyld "value" med `||input.acceleration (styrke)||`
+* Udfyld "value" med blokken `||input.acceleration (styrke)||`
 * Tjek at du under `||input.acceleration||` har valgt "styrke" i stedet for "x" 
  
 ```blocks
-basic.forever(function () {
+loops.everyInterval(100, function () {
     if (datalogningStatus == 1) {
-        datalogger.log(
-        datalogger.createCV("Tid", input.runningTime() % 1000),
-        datalogger.createCV("Acceleration", input.acceleration(Dimension.X))
-        )
-   
-    }
-})
-```
-
-
-## For altid: Indsæt pause
-* Træk blokken `||basic.pause||` ind i blokken `|basic.for altid|`. Den sørger for at der kommer 100 ms pause mellem målepunkterne.
-
-```blocks
-basic.forever(function () {
-    if (datalogningStatus == 1) {
-        datalogger.log(
-        datalogger.createCV("Tid", input.runningTime() % 1000),
-        datalogger.createCV("Acceleration", input.acceleration(Dimension.X))
-        )
-        basic.pause(100)
+        datalogger.log(datalogger.createCV("Acceleration", input.acceleration(Dimension.Strength)))
     }
 })
 ```

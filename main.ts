@@ -11,7 +11,6 @@ input.onButtonPressed(Button.A, function () {
 })
 input.onButtonPressed(Button.AB, function () {
     datalogger.deleteLog()
-    basic.pause(100)
     basic.showLeds(`
         . . . . .
         . # . # .
@@ -19,7 +18,7 @@ input.onButtonPressed(Button.AB, function () {
         . # . # .
         . . . . .
         `)
-    basic.pause(100)
+    basic.pause(500)
     basic.showLeds(`
         . . . . .
         . . . . .
@@ -38,7 +37,7 @@ input.onButtonPressed(Button.B, function () {
             . # # # .
             . . . . .
             `)
-        basic.pause(100)
+        basic.pause(500)
         basic.showLeds(`
             . . . . .
             . . . . .
@@ -48,12 +47,8 @@ input.onButtonPressed(Button.B, function () {
             `)
     }
 })
-basic.forever(function () {
+loops.everyInterval(100, function () {
     if (datalogningStatus == 1) {
-        datalogger.log(
-        datalogger.createCV("Tid", input.runningTime() % 1000),
-        datalogger.createCV("Acceleration", input.acceleration(Dimension.Strength))
-        )
-        basic.pause(100)
+        datalogger.log(datalogger.createCV("Acceleration", input.acceleration(Dimension.Strength)))
     }
 })
